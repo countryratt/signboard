@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden; 
+  
+
+  .title {
+    display: flex;
+    gap: 15px; /* 글자 간 간격 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .noto, .song, .kirang, .nanum {
+    font-size: 100px;
+    transition: transform 1s ease, font-weight 1s ease;
+    letter-spacing: -5px; /* 자간 */
+  }
+  
+  .noto {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+  }
+  .noto:hover {
+    transform: translate(50px, 50px) rotate(180deg);
+    font-weight: 100;
+  }
+  
+  .song {
+    font-family: 'Song Myung', serif;
+    font-weight: 400;
+  }
+  .song:hover {
+    transform: translate(-50px, -50px) rotate(-180deg);
+    font-weight: 100;
+  }
+  
+  .kirang {
+    font-family: 'Kirang Haerang', cursive;
+  }
+  .kirang:hover {
+    transform: scale(1.2) rotate(10deg);
+  }
+  
+  .nanum {
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 800; /* Bold 스타일 */
+  }
+  .nanum:hover {
+    transform: scale(1.2) rotate(10deg);
+  }
+  
