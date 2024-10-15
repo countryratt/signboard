@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쓰여진 간판들</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&family=Nanum+Myeongjo:wght@400;800&family=Noto+Sans+KR:wght@900&family=Song+Myung&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        overflow: hidden; 
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+    }
+
+    .description {
+        font-size: 
+        margin-bottom: 
+        text-align: center; 
+    }
+
+    .noto, .song, .kirang, .nanum {
+        cursor: pointer; 
+        transition: transform 0.3s;
+    }
+
+    .noto:hover, .song:hover, .kirang:hover, .nanum:hover {
+        transform: scale(1.1); /* hover 시 확대 */
+    }
+
+    .image-box {
+        position: absolute;
+        width: 100px; /* 이미지 크기 */
+        height: 100px; /* 이미지 크기 */
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8; /* 불투명도 */
+    }
+  </style>
+</head>
+<body>
+  <div class="description">손으로 써진 간판을 모았습니다. 글자를 클릭해 구경해보세요.</div>
+  <div class="title">
+    <span class="noto" onclick="showRandomImage()">쓰</span>
+    <span class="kirang" onclick="showRandomImage()">여</span>
+    <span class="nanum" onclick="showRandomImage()">진</span>
+    <span class="song" onclick="showRandomImage()">간</span>
+    <span class="nanum" onclick="showRandomImage()">판</span>
+  </div>
+
+  <script>
+    function showRandomImage() {
+
+      const imgNumber = Math.floor(Math.random() * 6) + 1; // 1부터 6까지 랜덤
+      const imgPath = `signboard.img/${imgNumber}.jpg`; // 이미지 경로
+
+
+      const newImage = document.createElement("div");
+      newImage.className = "image-box";
+      newImage.style.backgroundImage = `url(${imgPath})`;
+
+      newImage.style.left = Math.random() * 90 + "vw"; // 화면의 90% 범위
+      newImage.style.top = Math.random() * 90 + "vh"; // 화면의 90% 범위
+
+      document.body.appendChild(newImage);
+    }
+  </script>
+</body>
+</html>
